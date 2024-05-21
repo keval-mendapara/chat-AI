@@ -2,18 +2,13 @@ import streamlit as st
 from dotenv import load_dotenv
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
-from langchain_community.embeddings.openai import OpenAIEmbeddings
 from langchain_community.embeddings.huggingface import HuggingFaceInstructEmbeddings
 from langchain_community.vectorstores import FAISS
 import torch
-from langchain_community.llms import OpenAI
-from langchain_community.llms import HuggingFaceHub
 from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
-from InstructorEmbedding import INSTRUCTOR
 from htmlTemplates import css, bot_template, user_template
 from langchain.chains.conversational_retrieval.base import ConversationalRetrievalChain 
-
 
 def get_pdf_text(pdf_docs):
     text = ""  
