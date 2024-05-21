@@ -14,6 +14,7 @@ from InstructorEmbedding import INSTRUCTOR
 from htmlTemplates import css, bot_template, user_template
 from langchain.chains.conversational_retrieval.base import ConversationalRetrievalChain 
 
+
 def get_pdf_text(pdf_docs):
     text = ""  
     for pdf in pdf_docs:
