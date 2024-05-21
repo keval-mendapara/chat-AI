@@ -58,7 +58,7 @@ def handle_user_input(user_question):
     
 def main():
     load_dotenv()
-    st.set_page_config(page_title="Chat with multiple PDFs",page_icon=":books:")
+    st.set_page_config(page_title="Chat with multiple PDFs",page_icon=":computer:")
     
     st.write(css, unsafe_allow_html=True)
     
@@ -66,15 +66,15 @@ def main():
         st.session_state.conversation = None
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
-    st.header("Chat with multiple PDFs :books:")
-    user_question = st.text_input("Ask a question your documents:")
+    st.header("Chat with PDFs :book:")
+    user_question = st.text_input("Ask a Question From Documents : :books:")
     if user_question:
         handle_user_input(user_question)
     st.write(user_template.replace("{{MSG}}","Hello robot"), unsafe_allow_html=True)
-    st.write(bot_template.replace("{{MSG}}","Hello Human"), unsafe_allow_html=True)
+    st.write(bot_template.replace("{{MSG}}","Hey! "), unsafe_allow_html=True)
 
     with st.sidebar:
-        st.subheader("Your Documents")
+        st.subheader("CHAT AI  :books: ")
         pdf_docs = st.file_uploader("Upload your PDFs here and click on 'Process'",accept_multiple_files=True)
         
         if st.button("Process"):
